@@ -111,10 +111,16 @@ export default{
             getMessage({
                     mobile:that.mobile
                 }).then((response)=> {
-
+                    
+                    
               })
-              .catch(function (error) {
-
+              .catch(error => {
+                  console.error(error);
+                  
+                that.error.mobile = error.username?error.username[0]:'';
+                that.error.password = error.password?error.password[0]:'';
+                that.error.username = error.mobile?error.mobile[0]:'';
+                that.error.code = error.code?error.code[0]:'';
           });
 
         }

@@ -3,6 +3,7 @@ import axios from 'axios';
 
 let host = 'http://shop.projectsedu.com';
 let localhost = 'http://127.0.0.1:8000'
+// let localhost = 'http://192.168.136.128:8000'
 
 //获取商品类别信息
 export const queryCategorygoods = params => { return axios.get(`${host}/indexgoods/`) }
@@ -31,7 +32,7 @@ export const getHotSearch = params => { return axios.get(`${host}/hotsearchs/`) 
 export const getGoods = params => { return axios.get(`${localhost}/goods/`, { params: params }) }
 
 //商品详情
-export const getGoodsDetail = goodId => { return axios.get(`${host}/goods/${goodId}`+'/') }
+export const getGoodsDetail = goodId => { return axios.get(`${localhost}/goods/${goodId}`+'/') }
 
 //获取购物车商品
 export const getShopCarts = params => { return axios.get(`${host}/shopcarts/`) }
@@ -43,15 +44,15 @@ export const updateShopCart = (goodsId, params) => { return axios.patch(`${host}
 export const deleteShopCart = goodsId => { return axios.delete(`${host}/shopcarts/`+goodsId+'/') }
 
 //收藏
-export const addFav = params => { return axios.post(`${host}/userfavs/`, params) }
+export const addFav = params => { return axios.post(`${localhost}/userfavs/`, params) }
 
 //取消收藏
-export const delFav = goodsId => { return axios.delete(`${host}/userfavs/`+goodsId+'/') }
+export const delFav = goodsId => { return axios.delete(`${localhost}/userfavs/`+goodsId+'/') }
 
-export const getAllFavs = () => { return axios.get(`${host}/userfavs/`) }
+export const getAllFavs = () => { return axios.get(`${localhost}/userfavs/`) }
 
 //判断是否收藏
-export const getFav = goodsId => { return axios.get(`${host}/userfavs/`+goodsId+'/') }
+export const getFav = goodsId => { return axios.get(`${localhost}/userfavs/`+goodsId+'/') }
 
 //登录
 export const login = params => {
@@ -67,7 +68,7 @@ export const getMessage = parmas => { return axios.post(`${localhost}/codes/`, p
 
 
 //获取用户信息
-export const getUserDetail = () => { return axios.get(`${host}/users/1/`) }
+export const getUserDetail = () => { return axios.get(`${localhost}/users/1/`) }
 
 //修改用户信息
 export const updateUserInfo = params => { return axios.patch(`${host}/users/1/`, params) }
