@@ -150,15 +150,14 @@
                     this.getMessage();
 
                 }).catch(function (error) {
-                    console.log(error);
+                    console.error(error);
                 });
             },
             getMessage () { //获取留言
               getMessages().then((response)=> {
-                    console.log(response.data);
                     this.messageAll = response.data;
-                }).catch(function (error) {
-                    console.log(error);
+                }).catch((error) => {
+                    console.error(error);
                 });
             },
             deleteMessage (index, id) { // 删除留言
